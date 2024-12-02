@@ -29,7 +29,32 @@ const HomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => (
   </View>
 );
 
-
+const InstructionsScreen: React.FC<{ navigation: any }> = ({ navigation }) => (
+  <View style={styles.mainContainer}>
+    <Text style={styles.title}>Genera Contraseñas seguras y de forma Gratuita 😎😎😎</Text>
+    <Text style={styles.subtitle}>Pequeñas Instrucciones:</Text>
+    <View style={styles.levelContainer}>
+      <View style={styles.redBox}>
+        <Text style={styles.levelText}>Poco segura</Text>
+      </View>
+      <View style={styles.yellowBox}>
+        <Text style={styles.levelText}>Media</Text>
+      </View>
+      <View style={styles.greenBox}>
+        <Text style={styles.levelText}>Segura</Text>
+      </View>
+    </View>
+    <Text style={styles.subtitle}>
+      Usa caracteres como: <Text style={styles.highlight}>ABC abc 123 #$&</Text>
+    </Text>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => navigation.navigate('PasswordGenerator')}
+    >
+      <Text style={styles.buttonText}>Generemos tu contraseña :D</Text>
+    </TouchableOpacity>
+  </View>
+);
 
 const PasswordGeneratorScreen: React.FC = () => {
   const [password, setPassword] = React.useState<string>('');
