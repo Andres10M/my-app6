@@ -100,6 +100,17 @@ const PasswordGeneratorScreen: React.FC = () => {
   );
 };
 
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Inicio' }} />
+        <Stack.Screen name="Instructions" component={InstructionsScreen} options={{ title: 'Instrucciones' }} />
+        <Stack.Screen name="PasswordGenerator" component={PasswordGeneratorScreen} options={{ title: 'Generador de Contraseñas' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 
 const styles = StyleSheet.create({
